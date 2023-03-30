@@ -18,7 +18,7 @@ export default function Home() {
       <ProductBox>
         {
           data.length > 0 ? data.map((el: any) => {
-            return <ProductCard data={el}/>
+            return <ProductCard key={el.id} data={el}/>
           }) : "PRODUCT NOT FOUND"
         }
       </ProductBox>

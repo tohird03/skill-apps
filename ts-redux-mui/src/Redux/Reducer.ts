@@ -1,9 +1,18 @@
-import { LikeState } from "../Interface/likeRedux.interface";
+import { Reducer } from 'redux';
+import { Action, LikeState } from "../Interface/likeRedux.interface";
 
-const likeInitialState: LikeState = {arr: []}
+const initialLikeState: LikeState = {
+    likeArr: []
+};
 
-const likeReducer = (state = likeInitialState, action: {}) => {
-    return state
-}
+const likeReducer: Reducer<LikeState, Action> = (state = initialLikeState, action) => {
+    switch (action.type) {
+      case "ADDLIKE":
+        return {likeArr: [ ...state.likeArr, action.payload] }
+      default:
+        return state;
+    }
+  };
 
-export { likeReducer }
+
+export { likeReducer };
