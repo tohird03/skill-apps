@@ -14,11 +14,13 @@ const Todos = () => {
         isChecked: false,
       });
 
-      setAddTodo("")
+      setAddTodo("");
     }
   };
   return (
     <>
+      <h1>Todo</h1>
+
       <input
         type="text"
         value={addTodo}
